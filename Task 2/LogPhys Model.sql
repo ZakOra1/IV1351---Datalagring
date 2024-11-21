@@ -48,7 +48,7 @@ CREATE TABLE instrument (
     instrument_id SERIAL NOT NULL,
     start_date TIMESTAMP(10) NOT NULL,
     end_date TIMESTAMP(10) NOT NULL,
-    student_id SERIAL NOT NULL,
+    student_id INT,
     PRIMARY KEY (instrument_id)
 );
 
@@ -56,21 +56,21 @@ CREATE TABLE lesson (
     lesson_id SERIAL NOT NULL,
     lesson_difficulty VARCHAR(50) NOT NULL,
     scheduled_time TIMESTAMP(10) NOT NULL,
-    student_id SERIAL NOT NULL,
-    location_id SERIAL NOT NULL,
-    price_id SERIAL NOT NULL,
-    instructor_id SERIAL NOT NULL,
+    student_id INT,
+    location_id INT,
+    price_id INT,
+    instructor_id INT,
     PRIMARY KEY (lesson_id)
 );
 
 CREATE TABLE schedule (
     time TIMESTAMP(10),
-    instructor_id SERIAL NOT NULL
+    instructor_id INT
 );
 
 CREATE TABLE teaching_instruments (
     instrument_type VARCHAR(500) NOT NULL,
-    instructor_id SERIAL NOT NULL
+    instructor_id INT
 );
 
 CREATE TABLE ensemble (
@@ -95,8 +95,8 @@ CREATE TABLE individual_lesson (
 );
 
 CREATE TABLE registered_students (
-    lesson_id SERIAL NOT NULL,
-    student_id SERIAL NOT NULL
+    lesson_id INT,
+    student_id INT
 );
 
 ALTER TABLE instrument ADD CONSTRAINT FK_instrument_0 FOREIGN KEY (instrument_id) REFERENCES inventory (instrument_id);
