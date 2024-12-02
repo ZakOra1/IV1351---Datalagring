@@ -12,16 +12,6 @@ CREATE TABLE location (
     PRIMARY KEY (location_id)
 );
 
-CREATE TABLE person (
-    person_number VARCHAR(500) UNIQUE NOT NULL,
-    first_name VARCHAR(500) NOT NULL,
-    last_name VARCHAR(500) NOT NULL,
-    email VARCHAR(500),
-    telephone_number VARCHAR(13) NOT NULL,
-    city VARCHAR(500) NOT NULL,
-    street VARCHAR(500) NOT NULL,
-    zip_code VARCHAR(5) NOT NULL
-);
 
 CREATE TABLE price (
     price_id SERIAL NOT NULL,
@@ -33,13 +23,30 @@ CREATE TABLE price (
 CREATE TABLE student (
     student_id SERIAL NOT NULL,
     sibling_id VARCHAR(500),
-    contact_person VARCHAR(500) NOT NULL,
+    person_number VARCHAR(500) UNIQUE NOT NULL,
+    first_name VARCHAR(500) NOT NULL,
+    last_name VARCHAR(500) NOT NULL,
+    email VARCHAR(500),
+    telephone_number VARCHAR(13) NOT NULL,
+    city VARCHAR(500) NOT NULL,
+    street VARCHAR(500) NOT NULL,
+    zip_code VARCHAR(5) NOT NULL
+    contact_person_phone VARCHAR(13) NOT NULL,
+    contact_person_email VARCHAR(500),
     sibling_discount BOOLEAN NOT NULL,
     PRIMARY KEY (student_id)
 );
 
 CREATE TABLE instructor (
     instructor_id SERIAL NOT NULL,
+    person_number VARCHAR(500) UNIQUE NOT NULL,
+    first_name VARCHAR(500) NOT NULL,
+    last_name VARCHAR(500) NOT NULL,
+    email VARCHAR(500),
+    telephone_number VARCHAR(13) NOT NULL,
+    city VARCHAR(500) NOT NULL,
+    street VARCHAR(500) NOT NULL,
+    zip_code VARCHAR(5) NOT NULL
     ensemble BOOLEAN NOT NULL,
     PRIMARY KEY (instructor_id)
 );
