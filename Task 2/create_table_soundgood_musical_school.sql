@@ -1,7 +1,7 @@
 CREATE TABLE instructor (
  instructor_id SERIAL NOT NULL,
  ensemble BOOLEAN NOT NULL,
- person_number UNIQUE VARCHAR(500) NOT NULL,
+ person_number VARCHAR(500) NOT NULL UNIQUE,
  first_name VARCHAR(500) NOT NULL,
  last_name VARCHAR(500) NOT NULL,
  email VARCHAR(500),
@@ -26,7 +26,7 @@ ALTER TABLE inventory  ADD CONSTRAINT PK_inventory  PRIMARY KEY (instrument_id);
 
 CREATE TABLE location (
  location_id SERIAL NOT NULL,
- room_number UNIQUE VARCHAR(500) NOT NULL
+ room_number VARCHAR(500) NOT NULL UNIQUE
 );
 
 ALTER TABLE location ADD CONSTRAINT PK_location PRIMARY KEY (location_id);
@@ -52,7 +52,7 @@ CREATE TABLE student (
  student_id SERIAL NOT NULL,
  sibling_id INT,
  sibling_discount BOOLEAN NOT NULL,
- person_number UNIQUE VARCHAR(500) NOT NULL,
+ person_number VARCHAR(500) NOT NULL UNIQUE,
  first_name VARCHAR(500) NOT NULL,
  last_name VARCHAR(500) NOT NULL,
  email VARCHAR(500),
