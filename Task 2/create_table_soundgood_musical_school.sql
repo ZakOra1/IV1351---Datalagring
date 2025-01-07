@@ -127,7 +127,7 @@ ALTER TABLE individual_lesson ADD CONSTRAINT FK_individual_lesson_0 FOREIGN KEY 
 ALTER TABLE registered_students ADD CONSTRAINT FK_registered_students_0 FOREIGN KEY (lesson_id) REFERENCES ensemble (lesson_id);
 ALTER TABLE registered_students ADD CONSTRAINT FK_registered_students_1 FOREIGN KEY (student_id) REFERENCES student (student_id);
 
-CREATE TABLE student_instrument (
+CREATE TABLE instrument (
     student_id INT NOT NULL,
     instrument_id INT NOT NULL,
     PRIMARY KEY (student_id, instrument_id),
@@ -143,7 +143,7 @@ BEGIN
     BEGIN
         -- Count the number of instruments the student is currently renting
         SELECT COUNT(*) INTO instrument_count
-        FROM student_instrument
+        FROM instrument
         WHERE student_id = NEW.student_id;
         
         -- Check if the count exceeds 2
@@ -157,6 +157,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER check_instrument_limit
-BEFORE INSERT ON student_instrument
+BEFORE INSERT ON instrument
 FOR EACH ROW
 EXECUTE FUNCTION check_instrument_limit();
