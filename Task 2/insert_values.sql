@@ -23,22 +23,35 @@ INSERT INTO price (difficulty, lesson_type, price) VALUES
 ('Advanced', 'Group', '350'),
 ('Advanced', 'Ensemble', '400');
 
-INSERT INTO student (person_number, first_name, last_name, email, telephone_number, city, street, zip_code, sibling_id, contact_person_phone, sibling_discount, contact_person_email) VALUES
-('200112201234', 'Zak', 'Ora', 'zak.ora@example.com', '1234567890', 'Stockholm', 'Main St', '11122', NULL, '0738631123', FALSE, NULL),
-('200201185678', 'Andia', 'Mir', 'andia.mir@example.com', '0987654321', 'Stockholm', 'Second St', '11123', 3, '0738631122', TRUE, NULL),
-('200201185555', 'Diana', 'Mir', 'diana.mir@example.com', '1112223333', 'Stockholm', 'Third St', '11124', 2, '0738631124', TRUE, NULL),
-('200306128765', 'Henrietta', 'Gidehag', 'henriettagidehag@example.com', '2223334444', 'Stockholm', 'Solna', '11125', NULL, '0738631125', FALSE, NULL),
-('20020712S005', 'Charlie', 'Davis', 'charlie.davis@example.com', '3334445555', 'Stockholm', 'Fifth St', '11126', NULL, '0738631126', FALSE, NULL),
-('200402151234', 'Anna', 'Karlsson', 'anna.karlsson@example.com', '0701234567', 'Stockholm', 'Birger Jarlsgatan', '11320', NULL, '0730012345', FALSE, NULL),
-('200503261234', 'Bjorn', 'Andersson', 'bjorn.andersson@example.com', '0707654321', 'Stockholm', 'Sveavagen', '11321', NULL, '0730023456', FALSE, NULL),
-('200609141234', 'Clara', 'Johansson', 'clara.johansson@example.com', '0703344556', 'Stockholm', 'Kungsgatan', '11322', NULL, '0730034567', FALSE, NULL),
-('200711221234', 'David', 'Larsson', 'david.larsson@example.com', '0709988776', 'Stockholm', 'Storgatan', '11323', NULL, '0730045678', FALSE, NULL),
-('200810311234', 'Elsa', 'Svensson', 'elsa.svensson@example.com', '0701122334', 'Stockholm', 'Hamngatan', '11324', NULL, '0730056789', FALSE, NULL),
-('200901101234', 'Felix', 'Lindberg', 'felix.lindberg@example.com', '0706677889', 'Stockholm', 'Ostermalmsgatan', '11325', NULL, '0730067890', FALSE, NULL),
-('201002221234', 'Greta', 'Bergstrom', 'greta.bergstrom@example.com', '0704455667', 'Stockholm', 'Vasagatan', '11326', NULL, '0730078901', FALSE, NULL),
-('201103121234', 'Hugo', 'Ekstrom', 'hugo.ekstrom@example.com', '0707788990', 'Stockholm', 'Norrlandsgatan', '11327', NULL, '0730089012', FALSE, NULL),
-('201205051234', 'Iris', 'Nyberg', 'iris.nyberg@example.com', '0708899776', 'Stockholm', 'Skeppargatan', '11328', NULL, '0730090123', FALSE, NULL),
-('201305311234', 'Jonas', 'Hedlund', 'jonas.hedlund@example.com', '0705566778', 'Stockholm', 'Hornsgatan', '11329', NULL, '0730101234', FALSE, NULL);
+INSERT INTO student (person_number, first_name, last_name, email, telephone_number, city, street, zip_code, contact_person_phone, sibling_discount, contact_person_email) VALUES
+('200112201234', 'Zak', 'Ora', 'zak.ora@example.com', '1234567890', 'Stockholm', 'Main St', '11122', '0738631123', TRUE, NULL),
+('200012204567', 'Max', 'Ora', 'max.ora@example.com', '0987654321', 'Stockholm', 'Main St', '11123', '0738631123', TRUE, NULL),
+('199912208910', 'Felica', 'Ora', 'felicia.ora@example.com', '0787654321', 'Stockholm', 'Main St', '11123', '0738631123', TRUE, NULL),
+('200201185678', 'Andia', 'Mir', 'andia.mir@example.com', '0987654321', 'Stockholm', 'Second St', '11123', '0738631122', TRUE, NULL),
+('200201185555', 'Diana', 'Mir', 'diana.mir@example.com', '1112223333', 'Stockholm', 'Third St', '11124', '0738631124', TRUE, NULL),
+('200306128765', 'Henrietta', 'Gidehag', 'henriettagidehag@example.com', '2223334444', 'Stockholm', 'Solna', '11125', '0738631125', FALSE, NULL),
+('20020712S005', 'Charlie', 'Davis', 'charlie.davis@example.com', '3334445555', 'Stockholm', 'Fifth St', '11126', '0738631126', FALSE, NULL), 
+('200402151234', 'Anna', 'Karlsson', 'anna.karlsson@example.com', '0701234567', 'Stockholm', 'Birger Jarlsgatan', '11320', '0730012345', FALSE, NULL),
+('200503261234', 'Bjorn', 'Andersson', 'bjorn.andersson@example.com', '0707654321', 'Stockholm', 'Sveavagen', '11321', '0730023456', FALSE, NULL), 
+('200609141234', 'Clara', 'Johansson', 'clara.johansson@example.com', '0703344556', 'Stockholm', 'Kungsgatan', '11322', '0730034567', FALSE, NULL), 
+('200711221234', 'David', 'Larsson', 'david.larsson@example.com', '0709988776', 'Stockholm', 'Storgatan', '11323', '0730045678', FALSE, NULL), 
+('200810311234', 'Elsa', 'Svensson', 'elsa.svensson@example.com', '0701122334', 'Stockholm', 'Hamngatan', '11324', '0730056789', FALSE, NULL),
+('200901101234', 'Felix', 'Lindberg', 'felix.lindberg@example.com', '0706677889', 'Stockholm', 'Ostermalmsgatan', '11325', '0730067890', FALSE, NULL), 
+('201002221234', 'Greta', 'Bergstrom', 'greta.bergstrom@example.com', '0704455667', 'Stockholm', 'Vasagatan', '11326', '0730078901', FALSE, NULL), 
+('201103121234', 'Hugo', 'Ekstrom', 'hugo.ekstrom@example.com', '0707788990', 'Stockholm', 'Norrlandsgatan', '11327', '0730089012', FALSE, NULL),
+('201205051234', 'Iris', 'Nyberg', 'iris.nyberg@example.com', '0708899776', 'Stockholm', 'Skeppargatan', '11328', '0730090123', FALSE, NULL),
+('201305311234', 'Jonas', 'Hedlund', 'jonas.hedlund@example.com', '0705566778', 'Stockholm', 'Hornsgatan', '11329', '0730101234', FALSE, NULL); 
+
+INSERT INTO student_sibling (student_id, sibling_id) VALUES
+(1, 2),
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 1),
+(3, 2),
+(4, 5),
+(5, 4);
+
 
 INSERT INTO instructor (person_number, first_name, last_name, email, telephone_number, city, street, zip_code, ensemble) VALUES
 ('198310201111', 'Albus', 'Dumbledore', 'albus.dumbledore@example.com', '1112223333', 'Stockholm', 'Third St', '11124', TRUE),

@@ -50,7 +50,6 @@ CREATE TABLE schedule (
 
 CREATE TABLE student (
  student_id SERIAL NOT NULL,
- sibling_id INT,
  sibling_discount BOOLEAN NOT NULL,
  person_number VARCHAR(500) NOT NULL UNIQUE,
  first_name VARCHAR(500) NOT NULL,
@@ -65,6 +64,14 @@ CREATE TABLE student (
 );
 
 ALTER TABLE student ADD CONSTRAINT PK_student PRIMARY KEY (student_id);
+
+CREATE TABLE student_sibling (
+    student_id INT NOT NULL,
+    sibling_id INT NOT NULL,
+    PRIMARY KEY (student_id, sibling_id),
+    FOREIGN KEY (student_id) REFERENCES student(student_id),
+    FOREIGN KEY (sibling_id) REFERENCES student(student_id)
+);
 
 
 CREATE TABLE teaching_instruments (
