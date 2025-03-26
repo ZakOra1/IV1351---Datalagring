@@ -2,7 +2,7 @@ SELECT
     CASE
         WHEN sibling_count = 0 THEN '0'
         WHEN sibling_count = 1 THEN '1'
-        ELSE '2+'
+        ELSE '2'
     END AS no_of_siblings,
     COUNT(*) AS no_of_students
 FROM (
